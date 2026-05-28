@@ -28,7 +28,7 @@ COPY src ./src
 
 # Copy the built frontend into the Spring Boot static resources folder
 # This allows Spring Boot to serve the React app
-COPY --from=frontend-build /app/frontend/dist ./src/main/resources/static/
+COPY --from=frontend-build /app/src/main/resources/static ./src/main/resources/static/
 
 # Build the Spring Boot application
 RUN ./mvnw clean package -DskipTests
